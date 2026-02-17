@@ -321,8 +321,6 @@ textarea,
 
         <div class="divider"></div>
 
-        
-
       <section class="card">
         <div class="title">Mini “Reasons I Like You” (tap to shuffle)</div>
         <div class="muted">Click the card to get a new reason.</div>
@@ -426,8 +424,7 @@ textarea,
     copyBtn.addEventListener("click", async () => {
       const headline = document.getElementById("headline").textContent.trim();
       const msg = document.getElementById("msg").innerText.trim();
-      const note = document.getElementById("note").value.trim();
-      const full = `${headline}\n\n${msg}${note ? "\n\n" + note : ""}`;
+      const full = `${headline}\n\n${msg}`;
       try{
         await navigator.clipboard.writeText(full);
         copyBtn.textContent = "Copied ✅";
@@ -435,20 +432,6 @@ textarea,
       }catch(e){
         alert("Couldn’t copy. Try selecting the text manually.");
       }
-    });
-
-    // ---------- Insert helpers ----------
-    document.getElementById("insertSnuggles").addEventListener("click", () => {
-      const t = document.getElementById("note");
-      const line = "P.S. Snuggles says you’re officially the best. 🧸💜";
-      t.value = (t.value ? t.value + "\n\n" : "") + line;
-      t.focus();
-    });
-    document.getElementById("insertMemory").addEventListener("click", () => {
-      const t = document.getElementById("note");
-      const line = "One moment I keep replaying in my head is: ____________";
-      t.value = (t.value ? t.value + "\n\n" : "") + line;
-      t.focus();
     });
 
     // ---------- Play song button ----------
