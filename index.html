@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>1 Month Anniversary — Arsh 💜</title>
+  <style>
+    :root{
+      --bg1:#0b0b12;
+      --bg2:#1a1030;
+      --card:#ffffff12;
+      --card2:#ffffff1a;
+      --text:#f7f4ff;
+      --muted:#d8cff7;
+      --accent:#b38cff;
+      --accent2:#ff7bbd;
+      --gold:#ffd36b;
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --radius: 22px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      min-height:100vh;
+      background: radial-gradient(1200px 700px at 15% 15%, #3a1d6a 0%, transparent 60%),
+                  radial-gradient(900px 600px at 80% 30%, #5a1a4a 0%, transparent 55%),
+                  linear-gradient(160deg, var(--bg1), var(--bg2));
+      overflow-x:hidden;
+    }
+    .sparkle{
+      position:fixed; inset:0; pointer-events:none; opacity:.5;
+      background-image:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.35) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 70% 20%, rgba(255,255,255,.25) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,.22) 50%, transparent 51%),
+        radial-gradient(2px 2px at 85% 75%, rgba(255,255,255,.30) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 10% 60%, rgba(255,255,255,.18) 50%, transparent 51%);
+      background-size: 520px 520px;
+      animation: drift 18s linear infinite;
+    }
+    @keyframes drift{
+      0%{transform:translate3d(0,0,0)}
+      50%{transform:translate3d(-20px, 15px, 0)}
+      100%{transform:translate3d(0,0,0)}
+    }
+
+    header{
+      padding:48px 20px 22px;
+      max-width:980px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .badge{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 14px; border-radius:999px;
+      background:linear-gradient(90deg, #ffffff1a, #ffffff0d);
+      border:1px solid #ffffff22;
+      box-shadow: var(--shadow);
+      font-weight:600; color:var(--muted);
+      letter-spacing:.2px;
+    }
+    .badge .dot{
+      width:9px;height:9px;border-radius:50%;
+      background:linear-gradient(180deg, var(--accent), var(--accent2));
+      box-shadow:0 0 18px rgba(179,140,255,.55);
+    }
+    h1{
+      margin:18px 0 10px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height:1.05;
+      letter-spacing:-.8px;
+    }
+    h1 .grad{
+      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--gold));
+      -webkit-background-clip:text; background-clip:text;
+      color:transparent;
+      text-shadow:0 0 24px rgba(179,140,255,.15);
+    }
+    .sub{
+      max-width:780px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size: clamp(15px, 2.1vw, 18px);
+      line-height:1.55;
+    }
+
+    main{
+      max-width:980px; margin:0 auto; padding:22px 16px 60px;
+      display:grid; gap:18px; grid-template-columns: repeat(12, 1fr);
+    }
+    .card{
+      grid-column: span 12;
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border: 1px solid #ffffff22;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      backdrop-filter: blur(10px);
+    }
+    .row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+    .btns{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    button{
+      border:0; cursor:pointer; border-radius:999px;
+      padding:12px 14px; font-weight:700; font-size:14px;
+      color:var(--text);
+      background: linear-gradient(90deg, rgba(179,140,255,.95), rgba(255,123,189,.95));
+      box-shadow: 0 10px 24px rgba(179,140,255,.18);
+      transition: transform .12s ease, filter .12s ease;
+    }
+    button:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+    button:active{ transform: translateY(1px); }
+
+    .ghost{
+      background:transparent;
+      border:1px solid #ffffff2c;
+      box-shadow:none;
+      color:var(--muted);
+      font-weight:650;
+    }
+
+    .title{ font-size:18px; font-weight:800; margin:0 0 8px; letter-spacing:-.2px; }
+    .muted{ color:var(--muted); }
+
+    .big{
+      font-size: clamp(24px, 3.8vw, 38px);
+      font-weight:900;
+      letter-spacing:-.6px;
+      margin:4px 0 2px;
+    }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:9px 12px; border-radius:999px;
+      border:1px solid #ffffff22; background:#00000012;
+      color:var(--muted); font-weight:650;
+    }
+    .gidha{
+      width:44px;height:44px;border-radius:16px;
+      display:grid;place-items:center;
+      background: radial-gradient(circle at 30% 20%, rgba(255,211,107,.35), transparent 55%),
+                  linear-gradient(135deg, rgba(179,140,255,.9), rgba(255,123,189,.9));
+      box-shadow: 0 12px 28px rgba(255,123,189,.12);
+      border:1px solid #ffffff22;
+      flex:0 0 auto;
+    }
+
+    canvas#confetti{ position:fixed; inset:0; pointer-events:none; z-index:50; }
+
+    .hint{ margin-top:10px; font-size:13px; color:var(--muted); }
+    .divider{ height:1px; background:#ffffff1f; margin:14px 0; }
+
+    /* Photo styling */
+    .photoWrap{
+      display:flex;
+      justify-content:center;
+      margin-top:18px;
+    }
+    .photoCard{
+      width:min(560px, 92vw);
+      border-radius:24px;
+      border:1px solid #ffffff22;
+      background:#00000010;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      cursor:pointer;
+      user-select:none;
+    }
+    .photoCard img{
+      width:100%;
+      display:block;
+    }
+    .photoOverlay{
+      position:absolute;
+      inset:auto 0 0 0;
+      padding:12px 14px;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.65));
+      color: #fff;
+      font-weight:800;
+      letter-spacing:.2px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .tiny{
+      font-size:12px;
+      color:#ffffffc7;
+      font-weight:650;
+    }
+
+    /* Easter egg toast */
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      background: rgba(0,0,0,.55);
+      border:1px solid #ffffff22;
+      color:var(--text);
+      padding:12px 14px;
+      border-radius:999px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      display:none;
+      z-index:80;
+      max-width:min(92vw, 740px);
+      text-align:center;
+      font-weight:800;
+    }
+
+    footer{
+      max-width:980px; margin: 0 auto; padding: 8px 16px 24px;
+      color: #ffffff7a; text-align:center; font-size:12px;
+    }
+
+    .hearts{
+      position:absolute; inset:0; pointer-events:none; opacity:.22;
+      background-image:
+        radial-gradient(8px 8px at 10% 20%, rgba(255,123,189,.20) 40%, transparent 42%),
+        radial-gradient(10px 10px at 86% 30%, rgba(179,140,255,.18) 40%, transparent 42%),
+        radial-gradient(9px 9px at 65% 80%, rgba(255,211,107,.15) 40%, transparent 42%);
+      filter: blur(.2px);
+    }
+    .wrap{position:relative}
+  </style>
+</head>
+
+<body>
+  <div class="sparkle"></div>
+  <canvas id="confetti"></canvas>
+  <div class="toast" id="toast"></div>
+
+  <div class="wrap">
+    <div class="hearts"></div>
+
+    <header>
+      <div class="badge"><span class="dot"></span> One month with <strong>Arsh</strong> 💜</div>
+      <h1>Happy <span class="grad">1-Month Anniversary</span></h1>
+      <p class="sub">
+        To Arsh — the cutie who makes life brighter and somehow makes every day feel like a highlight reel.
+        And yes… I’m still your #1 fan when it comes to <strong>gidha</strong> 💃
+      </p>
+
+      <!-- PHOTO: Save your uploaded photo as "us.png" in the same folder as index.html -->
+      <div class="photoWrap">
+        <div class="photoCard" id="photoCard" title="(psst… tap a few times)">
+          <img src="us.png" alt="Us 💜" />
+          <div class="photoOverlay">
+            <div>Us 💜</div>
+            <div class="tiny">tap for a surprise</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Play song button (YouTube embed) -->
+      <div style="margin-top:18px;">
+        <button id="playSong">Play Our Song 🎶</button>
+        <div class="hint">Tap the button (phones block autoplay unless you press play).</div>
+
+        <!-- Using your provided link: ID = vXU3n9SBttg -->
+        <div id="player" style="margin-top:12px; display:none;">
+          <iframe width="0" height="0"
+            src="https://www.youtube.com/embed/vXU3n9SBttg?enablejsapi=1&autoplay=1&loop=1&playlist=vXU3n9SBttg"
+            title="Our Song"
+            frameborder="0"
+            allow="autoplay; encrypted-media">
+          </iframe>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="row">
+          <div class="kicker">
+            <span class="gidha">💜</span>
+            <div>
+              <div style="font-weight:900;color:var(--text)">For Arsh</div>
+              <div class="muted" style="font-size:13px">A tiny page with big feelings</div>
+            </div>
+          </div>
+
+          <div class="btns">
+            <button id="confettiBtn">Make it pop ✨</button>
+            <button class="ghost" id="copyBtn">Copy message</button>
+          </div>
+        </div>
+
+        <p class="big" id="headline">A whole month of “wow, this is real.”</p>
+
+        <p class="muted" id="msg" style="font-size:16px; line-height:1.75;">
+          Arsh,
+          <br><br>
+          In just one month, I’ve already realized something — you’re not just cute… you’re genuinely strong.
+          The way you handle things, the way you show up for people, and the way you care without making it a big deal
+          says a lot about who you are.
+          <br><br>
+          You’re a great daughter who makes your family proud, an amazing sister people feel safe around,
+          a loyal friend anyone would be lucky to have… and honestly, an incredible girlfriend to me.
+          <br><br>
+          I appreciate you more than you probably realize. I’m really happy I met you —
+          and I’m excited for everything still ahead of us.
+          <br><br>
+          Happy one month, my cutie 💜
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="title">Add your personal note (optional)</div>
+        <div class="muted">Add one specific memory + one inside joke = instant hit.</div>
+        <textarea
+          style="width:100%;min-height:140px;margin-top:10px;border-radius:18px;border:1px solid #ffffff22;background:#00000010;color:var(--text);padding:12px 12px;font: 14px/1.45 var(--font);resize: vertical;outline:none;"
+          id="note"
+          placeholder="Type your message here... (this stays on your device unless you share the page link)"></textarea>
+
+        <div class="btns" style="margin-top:10px">
+          <button class="ghost" id="insertSnuggles">Add “Snuggles” line 🧸</button>
+          <button class="ghost" id="insertMemory">Add a memory prompt 📌</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title">Mini “Reasons I Like You” (tap to shuffle)</div>
+        <div class="muted">Click the card to get a new reason.</div>
+
+        <div id="reasonBox"
+          style="margin-top:12px;padding:16px;border-radius:18px;border:1px solid #ffffff22;background:#00000012;cursor:pointer;user-select:none;">
+          <div style="font-size:16px;font-weight:850" id="reason">Your laugh is genuinely addictive.</div>
+          <div class="muted" style="margin-top:8px;font-size:13px">tap to shuffle</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Made with 💜 for Arsh • Tip: Open somewhere quiet for maximum effect 🎧
+    </footer>
+  </div>
+
+  <script>
+    // ---------- Confetti (no external libs) ----------
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+    let W, H, confetti = [], animId = null;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    function rand(min, max){ return Math.random() * (max - min) + min; }
+
+    function burstConfetti(count = 160){
+      confetti = [];
+      for(let i=0;i<count;i++){
+        confetti.push({
+          x: rand(0, W),
+          y: rand(-20, -H*0.2),
+          r: rand(3, 7),
+          vx: rand(-2.2, 2.2),
+          vy: rand(2.0, 5.2),
+          rot: rand(0, Math.PI*2),
+          vr: rand(-0.12, 0.12),
+          life: rand(80, 140),
+          hue: rand(260, 330)
+        });
+      }
+      if(animId) cancelAnimationFrame(animId);
+      animate();
+      setTimeout(() => {
+        if(animId) cancelAnimationFrame(animId);
+        animId = null;
+        ctx.clearRect(0,0,W,H);
+      }, 2600);
+    }
+
+    function animate(){
+      animId = requestAnimationFrame(animate);
+      ctx.clearRect(0,0,W,H);
+
+      confetti.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rot += p.vr;
+        p.vy += 0.02;
+        p.vx *= 0.995;
+        p.life -= 1;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = `hsla(${p.hue}, 90%, 70%, 0.9)`;
+        ctx.fillRect(-p.r, -p.r/2, p.r*2, p.r);
+        ctx.restore();
+      });
+
+      confetti = confetti.filter(p => p.life > 0 && p.y < H + 40);
+      if(confetti.length === 0){
+        cancelAnimationFrame(animId);
+        animId = null;
+      }
+    }
+
+    document.getElementById("confettiBtn").addEventListener("click", () => burstConfetti());
+
+    // ---------- Copy message ----------
+    const copyBtn = document.getElementById("copyBtn");
+    copyBtn.addEventListener("click", async () => {
+      const headline = document.getElementById("headline").textContent.trim();
+      const msg = document.getElementById("msg").innerText.trim();
+      const note = document.getElementById("note").value.trim();
+      const full = `${headline}\n\n${msg}${note ? "\n\n" + note : ""}`;
+      try{
+        await navigator.clipboard.writeText(full);
+        copyBtn.textContent = "Copied ✅";
+        setTimeout(()=>copyBtn.textContent="Copy message", 1400);
+      }catch(e){
+        alert("Couldn’t copy. Try selecting the text manually.");
+      }
+    });
+
+    // ---------- Insert helpers ----------
+    document.getElementById("insertSnuggles").addEventListener("click", () => {
+      const t = document.getElementById("note");
+      const line = "P.S. Snuggles says you’re officially the best. 🧸💜";
+      t.value = (t.value ? t.value + "\n\n" : "") + line;
+      t.focus();
+    });
+    document.getElementById("insertMemory").addEventListener("click", () => {
+      const t = document.getElementById("note");
+      const line = "One moment I keep replaying in my head is: ____________";
+      t.value = (t.value ? t.value + "\n\n" : "") + line;
+      t.focus();
+    });
+
+    // ---------- Play song button ----------
+    document.getElementById("playSong").addEventListener("click", function(){
+      const player = document.getElementById("player");
+      player.style.display = "block";
+      this.textContent = "Our Song is playing 💜";
+      burstConfetti(220);
+    });
+
+    // ---------- Reasons shuffle ----------
+    const reasons = [
+      "Your laugh is genuinely addictive.",
+      "You make even boring days feel fun.",
+      "You’re confident in the cutest way.",
+      "Your gidha energy is unmatched 💃",
+      "You’re kind in a way that feels rare.",
+      "You’re a whole vibe — and I’m here for it.",
+      "You make me want to be better, quietly.",
+      "You’re cute. Like… objectively. 😌",
+      "You’re strong, and you don’t even brag about it.",
+      "You care deeply — it shows."
+    ];
+    const reasonEl = document.getElementById("reason");
+    document.getElementById("reasonBox").addEventListener("click", () => {
+      const next = reasons[Math.floor(Math.random()*reasons.length)];
+      reasonEl.textContent = next;
+      burstConfetti(70);
+    });
+
+    // ---------- Easter egg ----------
+    const toast = document.getElementById("toast");
+    function showToast(text){
+      toast.textContent = text;
+      toast.style.display = "block";
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>{ toast.style.display="none"; }, 2600);
+    }
+
+    // Tap the photo 7 times to reveal the easter egg
+    let taps = 0;
+    let tapTimer = null;
+    document.getElementById("photoCard").addEventListener("click", () => {
+      taps++;
+      burstConfetti(35);
+
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(()=>{ taps = 0; }, 1200);
+
+      if(taps >= 7){
+        taps = 0;
+        showToast("always be the shizuka to my nobita 💜");
+        burstConfetti(260);
+      }
+    });
+  </script>
+
+  <!-- IMPORTANT:
+       Save your photo as "us.png" in the SAME folder as this index.html.
+       Then it will appear on the site.
+  -->
+</body>
+</html>
