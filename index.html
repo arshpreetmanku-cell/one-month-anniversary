@@ -321,18 +321,7 @@ textarea,
 
         <div class="divider"></div>
 
-        <div class="title">Add your personal note (optional)</div>
-        <div class="muted">Add one specific memory + one inside joke = instant hit.</div>
-        <textarea
-          style="width:100%;min-height:140px;margin-top:10px;border-radius:18px;border:1px solid #ffffff22;background:#00000010;color:var(--text);padding:12px 12px;font: 14px/1.45 var(--font);resize: vertical;outline:none;"
-          id="note"
-          placeholder="Type your message here... (this stays on your device unless you share the page link)"></textarea>
-
-        <div class="btns" style="margin-top:10px">
-          <button class="ghost" id="insertSnuggles">Add “Snuggles” line 🧸</button>
-          <button class="ghost" id="insertMemory">Add a memory prompt 📌</button>
-        </div>
-      </section>
+        
 
       <section class="card">
         <div class="title">Mini “Reasons I Like You” (tap to shuffle)</div>
@@ -345,12 +334,25 @@ textarea,
         </div>
       </section>
     </main>
-
+    
     <footer>
       Made with 💜 for Arsh • Tip: Open somewhere quiet for maximum effect 🎧
     </footer>
   </div>
-
+<!-- OUR SONG (hidden player) -->
+<div style="position:fixed; bottom:-200px; opacity:0;">
+  <iframe
+    id="ourSong"
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/vXU3n9SBttg?enablejsapi=1"
+    title="our song"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
+  
   <script>
     // ---------- Confetti (no external libs) ----------
     const canvas = document.getElementById("confetti");
@@ -507,6 +509,18 @@ textarea,
   <!-- IMPORTANT:
        Save your photo as "us.png" in the SAME folder as this index.html.
        Then it will appear on the site.
-  -->
+  <script>
+let musicStarted = false;
+
+document.addEventListener("click", function() {
+  if(musicStarted) return;
+  musicStarted = true;
+
+  const iframe = document.getElementById("ourSong");
+  if(iframe){
+    iframe.src += "&autoplay=1";
+  }
+});
+</script>
 </body>
 </html>
